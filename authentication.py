@@ -23,7 +23,8 @@ try:
     # Uploading the template to the sensor
     temp_file = open("template.txt", "r")
     template = []
-    template.append(int(temp_file.read()))
+    for x in temp_file:
+        template.append(int(x))
     temp_file.close()
     f.uploadCharacteristics(characteristicsData=template)
     positionNumber = f.storeTemplate()
