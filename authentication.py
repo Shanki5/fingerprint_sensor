@@ -17,6 +17,9 @@ except Exception as e:
 # trying to authenticate
 
 try:
+    # Deleting the database
+    f.clearDatabase()
+	
     # Uploading the template to the sensor
     temp_file = open("template.txt", "r")
     template = []
