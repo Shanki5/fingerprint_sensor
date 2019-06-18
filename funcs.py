@@ -63,6 +63,10 @@ try:
     # Exports the template to a temporaryfile
     template = f.downloadCharacteristics()
     print(template)
+    temp_file = open("template.txt", "w+")
+    for item in template:
+        temp_file.write(item)
+    temp_file.close()
 
 
 
