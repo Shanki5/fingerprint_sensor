@@ -65,7 +65,7 @@ try:
     print(template)
     temp_file = open("template.txt", "w+")
     for item in template:
-        temp_file.write(item)
+        temp_file.write("%",item)
     temp_file.close()
 
 
