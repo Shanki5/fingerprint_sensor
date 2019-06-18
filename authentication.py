@@ -22,7 +22,7 @@ try:
     template = []
     template.append(int(temp_file.read()))
     temp_file.close()
-    f.uploadCharecteristics(template)
+    f.uploadCharacteristics(characteristicsData=template)
     positionNumber = f.storeTemplate()
     print('Finger uploaded successfully!')
     print('New template position #' + str(positionNumber))
