@@ -65,13 +65,8 @@ try:
     print(template)
     temp_file = open("template.txt", "w+")
     for item in template:
-<<<<<<< HEAD
-        temp_file.write(""+item)
-=======
-        temp_file.write(str(item)+"/n")
->>>>>>> b2b6e1f8d012761c60e76bad3cd17331a640e5a5
+        temp_file.write(str(item)+"\n")
     temp_file.close()
-
 
 
 except Exception as e:
