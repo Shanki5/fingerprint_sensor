@@ -16,7 +16,6 @@ class fingerprint_sensor:
         except Exception as e:
             print('The fingerprint sensor could not be initialized!')
             print('Exception message: ' + str(e))
-            exit(1)
     def enrollment(self):
         try:
             print('Waiting for finger...')
@@ -34,7 +33,6 @@ class fingerprint_sensor:
 
             if (positionNumber >= 0):
                 print('Template already exists at position #' + str(positionNumber))
-                exit(0)
 
             time.sleep(2)
 
@@ -61,14 +59,13 @@ class fingerprint_sensor:
             template = self.f.downloadCharacteristics()
             temp_file = open("template.txt", "w+")
             for item in template:
-                temp_file.write(str(item) + "/n")
+                temp_file.write(str(item) + "\n")
             temp_file.close()
             return os.path.abspath('temp_file.txt')
 
         except Exception as e:
             print('Operation failed!')
             print('Exception message: ' + str(e))
-            exit(1)
 
     def authentication(self,file_path):
         try:
@@ -100,7 +97,6 @@ class fingerprint_sensor:
             if (positionNumber == -1):
                 print('No match found!')
                 match_flag = 0
-                exit(0)
             elif (positionNumber == Index_template):
                 print('Matched')
                 match_flag = 1
